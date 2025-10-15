@@ -1,9 +1,12 @@
 [build]
+  # Base directory where the package.json is located
+  base = "artwork-gallery"
+  
   # Build command for Vite
   command = "npm run build"
   
   # Directory to publish (Vite's default output directory)
-  publish = "dist"
+  publish = "artwork-gallery/dist"
 
 [build.environment]
   # Node.js version
