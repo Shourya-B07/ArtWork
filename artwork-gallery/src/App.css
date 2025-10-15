@@ -1,0 +1,751 @@
+/* Global styles for full width */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Responsive base styles */
+@media (max-width: 768px) {
+  html, body {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  html, body {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 360px) {
+  html, body {
+    font-size: 10px;
+  }
+  
+  .app-container {
+    padding: 0.1rem;
+  }
+  
+  .app-container h1 {
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .selection-panel {
+    padding: 0.3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .pagination-btn {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.7rem;
+    min-width: 25px;
+    height: 25px;
+  }
+  
+  .p-datatable {
+    font-size: 0.65rem;
+    min-width: 400px;
+  }
+  
+  /* Hide even more columns on very small screens */
+  .p-datatable .p-datatable-thead > tr > th:nth-child(3),
+  .p-datatable .p-datatable-tbody > tr > td:nth-child(3) {
+    display: none;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+  .p-datatable {
+    min-width: 300px;
+    font-size: 0.6rem;
+  }
+  
+  .p-datatable .p-datatable-thead > tr > th,
+  .p-datatable .p-datatable-tbody > tr > td {
+    padding: 0.2rem;
+    max-width: 80px;
+  }
+}
+
+.app-container {
+  padding: 1rem;
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive container */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 0.25rem;
+  }
+}
+
+/* Header section */
+.header-section {
+  margin-bottom: 2rem;
+}
+
+.app-container h1 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Title column header with dropdown */
+.title-column-header {
+  position: relative;
+  display: inline-block;
+}
+
+.title-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 600;
+  color: #333;
+}
+
+.dropdown-arrow {
+  font-size: 0.8rem;
+  color: #666;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+  min-width: 200px;
+  z-index: 1000;
+  margin-top: 0.5rem;
+}
+
+.dropdown-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  box-sizing: border-box;
+}
+
+.dropdown-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.dropdown-submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #dee2e6;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.dropdown-submit-button:hover:not(:disabled) {
+  background-color: #e9ecef;
+  border-color: #adb5bd;
+}
+
+.dropdown-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive header section */
+@media (max-width: 768px) {
+  .header-section {
+    margin-bottom: 1.5rem;
+  }
+  
+  .app-container h1 {
+    font-size: 1.25rem;
+  }
+  
+  .dropdown-content {
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-section {
+    margin-bottom: 1rem;
+  }
+  
+  .app-container h1 {
+    font-size: 1.1rem;
+  }
+  
+  .dropdown-content {
+    min-width: 160px;
+    padding: 0.75rem;
+  }
+  
+  .dropdown-input {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+  
+  .dropdown-submit-button {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+}
+
+.selection-panel {
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Responsive selection panel */
+@media (max-width: 768px) {
+  .selection-panel {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .selection-panel {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    gap: 1rem;
+  }
+}
+
+.selection-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.selection-text {
+  font-weight: 500;
+  color: #495057;
+  font-size: 0.95rem;
+}
+
+.current-page-selection {
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-weight: 400;
+}
+
+.clear-all-button {
+  padding: 0.5rem 1rem;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.clear-all-button:hover {
+  background-color: #c82333;
+}
+
+/* Responsive clear button */
+@media (max-width: 768px) {
+  .clear-all-button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .clear-all-button {
+    padding: 0.35rem 0.7rem;
+    font-size: 0.75rem;
+    margin-top: 0.75rem;
+  }
+}
+
+/* Advanced Pagination Styling */
+.advanced-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive pagination */
+@media (max-width: 768px) {
+  .advanced-pagination {
+    gap: 0.25rem;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .advanced-pagination {
+    gap: 0.2rem;
+    margin-top: 0.75rem;
+    padding: 0.25rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+.pagination-btn {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #dee2e6;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #495057;
+  transition: all 0.2s ease;
+  min-width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  background: #f8f9fa;
+  border-color: #adb5bd;
+  transform: translateY(-1px);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f8f9fa;
+  color: #6c757d;
+  transform: none;
+}
+
+/* Responsive pagination buttons */
+@media (max-width: 768px) {
+  .pagination-btn {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+    min-width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination-btn {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.75rem;
+    min-width: 30px;
+    height: 30px;
+  }
+  
+  /* Hide some pagination buttons on very small screens */
+  .pagination-btn.first-page,
+  .pagination-btn.last-page {
+    display: none;
+  }
+  
+  .page-numbers {
+    display: flex;
+    gap: 0.1rem;
+  }
+}
+
+.pagination-btn.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+  font-weight: 600;
+}
+
+.pagination-btn.active:hover {
+  background: #0056b3;
+  border-color: #0056b3;
+}
+
+.page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 0.5rem;
+}
+
+.page-number {
+  min-width: 40px;
+}
+
+.page-dots {
+  padding: 0.5rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.first-page, .last-page {
+  font-weight: 600;
+}
+
+.prev-page, .next-page {
+  font-weight: 600;
+}
+
+/* DataTable Styling */
+.p-datatable {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .p-datatable {
+    font-size: 0.8rem;
+    min-width: 600px; /* Force horizontal scroll on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .p-datatable {
+    font-size: 0.7rem;
+    border-radius: 4px;
+    min-width: 500px; /* Force horizontal scroll on mobile */
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* Hide less important columns on very small screens */
+  .p-datatable .p-datatable-thead > tr > th:nth-child(4),
+  .p-datatable .p-datatable-tbody > tr > td:nth-child(4),
+  .p-datatable .p-datatable-thead > tr > th:nth-child(5),
+  .p-datatable .p-datatable-tbody > tr > td:nth-child(5),
+  .p-datatable .p-datatable-thead > tr > th:nth-child(6),
+  .p-datatable .p-datatable-tbody > tr > td:nth-child(6) {
+    display: none;
+  }
+  
+  /* Make remaining columns narrower */
+  .p-datatable .p-datatable-thead > tr > th,
+  .p-datatable .p-datatable-tbody > tr > td {
+    padding: 0.3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+  }
+}
+
+.full-width-table {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.p-datatable .p-datatable-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: 600;
+  color: #495057;
+  padding: 0.75rem;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background-color: #e9ecef;
+  border-bottom: 1px solid #dee2e6;
+  border-right: 1px solid #dee2e6;
+  padding: 0.75rem;
+  font-weight: 600;
+  color: #495057;
+  text-align: left;
+}
+
+.p-datatable .p-datatable-thead > tr > th:last-child {
+  border-right: none;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  border-bottom: 1px solid #f1f3f4;
+  border-right: 1px solid #f1f3f4;
+  padding: 0.75rem;
+  vertical-align: top;
+}
+
+/* Responsive table cells */
+@media (max-width: 768px) {
+  .p-datatable .p-datatable-tbody > tr > td,
+  .p-datatable .p-datatable-thead > tr > th {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .p-datatable .p-datatable-tbody > tr > td,
+  .p-datatable .p-datatable-thead > tr > th {
+    padding: 0.4rem;
+  }
+}
+
+.p-datatable .p-datatable-tbody > tr > td:last-child {
+  border-right: none;
+}
+
+.p-datatable .p-datatable-tbody > tr:last-child > td {
+  border-bottom: none;
+}
+
+.p-datatable .p-datatable-tbody > tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Checkbox column styling */
+.p-datatable .p-datatable-thead > tr > th:first-child,
+.p-datatable .p-datatable-tbody > tr > td:first-child {
+  width: 50px;
+  min-width: 50px;
+  max-width: 50px;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* Text overflow handling */
+.p-datatable .p-datatable-tbody > tr > td {
+  word-wrap: break-word;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  min-width: 120px;
+}
+
+/* Ensure proper spacing and alignment */
+.p-datatable .p-datatable-tbody > tr > td input[type="checkbox"],
+.p-datatable .p-datatable-thead > tr > th input[type="checkbox"] {
+  margin: 0;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  accent-color: #007bff;
+}
+
+.p-datatable .p-datatable-tbody > tr > td input[type="checkbox"]:checked,
+.p-datatable .p-datatable-thead > tr > th input[type="checkbox"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Loading and Error States */
+.table-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Responsive table container */
+@media (max-width: 768px) {
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Add scroll indicator for mobile */
+  .table-container::after {
+    content: "← Swipe to see more →";
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.6rem;
+    z-index: 5;
+    pointer-events: none;
+  }
+}
+
+.table-container.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  gap: 1rem;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Responsive loading overlay */
+@media (max-width: 768px) {
+  .loading-overlay {
+    gap: 0.75rem;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .loading-overlay p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .loading-overlay {
+    gap: 0.5rem;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .loading-overlay p {
+    font-size: 0.8rem;
+  }
+}
+
+.loading-overlay p {
+  margin: 0;
+  color: #495057;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Loading spinner styling */
+.loading-overlay .p-progress-spinner {
+  width: 3rem;
+  height: 3rem;
+}
+
+@media (max-width: 480px) {
+  .loading-overlay .p-progress-spinner {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.error-message {
+  margin-bottom: 1.5rem;
+}
+
+.info-message {
+  margin-bottom: 1.5rem;
+}
+
+/* Responsive messages */
+@media (max-width: 768px) {
+  .error-message,
+  .info-message {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-message,
+  .info-message {
+    margin-bottom: 0.75rem;
+  }
+}
+
+/* Disabled pagination button styling */
+.pagination-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+/* Text truncation styling */
+.p-datatable .p-datatable-tbody > tr > td span[title] {
+  cursor: help;
+}
+
+/* N/A styling for null values */
+.p-datatable .p-datatable-tbody > tr > td span {
+  color: #6c757d;
+}
+
+.p-datatable .p-datatable-tbody > tr > td span:not(:contains("N/A")) {
+  color: #495057;
+}
