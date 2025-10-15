@@ -9,8 +9,8 @@
   publish = "artwork-gallery/dist"
 
 [build.environment]
-  # Node.js version
-  NODE_VERSION = "18"
+  # Node.js version - updated for Vite compatibility
+  NODE_VERSION = "20"
 
 # Redirect rules for SPA (Single Page Application)
 [[redirects]]
