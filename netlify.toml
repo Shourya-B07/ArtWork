@@ -2,11 +2,11 @@
   # Base directory where the package.json is located
   base = "artwork-gallery"
   
-  # Build command for Vite with verbose output
-  command = "npm ci && npm run build"
+  # Build command with explicit steps and directory verification
+  command = "npm ci && npm run build && echo 'Build completed, checking dist directory:' && ls -la dist && echo 'Dist directory contents verified'"
   
-  # Directory to publish (Vite's default output directory)
-  publish = "artwork-gallery/dist"
+  # Directory to publish (relative to base directory)
+  publish = "dist"
 
 [build.environment]
   # Node.js version - updated for Vite compatibility
