@@ -2,8 +2,8 @@
   # Base directory where the package.json is located
   base = "artwork-gallery"
   
-  # Build command for Vite
-  command = "npm run build"
+  # Build command for Vite with verbose output
+  command = "npm ci && npm run build"
   
   # Directory to publish (Vite's default output directory)
   publish = "artwork-gallery/dist"
